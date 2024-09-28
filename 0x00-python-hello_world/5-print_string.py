@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/python3
 str="Holberton School"
-echo "$str$str$str"
-echo "${str:0:9}"
+print(str * 3)
+print(str[:9])
