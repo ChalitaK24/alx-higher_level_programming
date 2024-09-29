@@ -1,8 +1,13 @@
-#!/usr/bin/python3
-import os
-import py_compile
+#!/bin/bash
+if [ -z "$PYFILE" ];
+then
+	echo "Error: PYFILE environemnt variable is not set."
+	exit 1
+fi
 
-pyfile = os.getenv('PYFILE')
+echo "Compiling main.py  ..."
+python3 -m py_compile "$PYFILE"
 
-if pyfile:
-	py_compile.compile(pyfile, cfile=pyfile + 'c')
+mv __pycache__/"${PYFILE%.*}".*.pyc "${PYFILE}c"
+
+rmdir __pycache__ 2> /dev/null
