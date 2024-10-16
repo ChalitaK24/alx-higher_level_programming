@@ -2,6 +2,7 @@
 
 """Function Returns a list of available attr and mtd of obj"""
 
+
 def lookup(obj):
     """
     obj: the object to inspect
