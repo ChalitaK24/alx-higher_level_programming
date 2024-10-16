@@ -1,4 +1,6 @@
 #!/usr/bin/bash
+"""Function to append str to end of text file."""
+
 
 def append_write(filename="", text=""):
     """

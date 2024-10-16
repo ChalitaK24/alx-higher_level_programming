@@ -1,4 +1,10 @@
 #!/usr/bin/bash
+"""
+Function to wrte a text file and return character num.
+
+"""
+
+
 def write_file(filename="", text=""):
     """
     Write str to a UTF-8 encoded txt file and returns numberof char
