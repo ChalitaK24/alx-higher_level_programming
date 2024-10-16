@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 """Function Initializes the Student with first name, last name, and age"""
 
 
