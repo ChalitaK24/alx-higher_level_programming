@@ -2,10 +2,13 @@
 
 """Function listing pascal's triangle of n"""
 
+
 def pascal_triangle(n):
     """
-    n(int): number of rows
-    Returns: list
+    Returns a list of lists of integers representing Pascal's triangle of n
+    Args: n (int): Number of rows
+    Returns:
+        list: Pascal's triangle of n rows.
     """
     if n <= 0:
         return[]
