@@ -1,9 +1,10 @@
 #!/usr/bin/python3
+"""Function that returns the dicttionary desc with simple data struct"""
+
 
 def class_to_json(obj):
     """
-     Function that returns the dict desc with simple data struc
-     obj: An instance of a class.
+     obj: An instance of a class
       Returns:
         A dictionary containing all serializable attributes
     """
