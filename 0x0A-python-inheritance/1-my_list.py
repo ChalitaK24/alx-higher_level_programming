@@ -7,10 +7,8 @@ class MyList(list):
     """
     Subclass of the built-in list class to be printed in ascending order
     """
-
-
-def print_sorted(self):
-    """
-    Function prints the sorted list in ascending order
-    """
-    print(sorted(self))
+    def print_sorted(self):
+        """
+        Function prints the sorted list in ascending order
+        """
+        print(sorted(self))
