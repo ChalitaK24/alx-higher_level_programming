@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 
+""" Implementing Base class"""
+
 class Base:
+""" private class atribute """
+
     __nb_objects = 0
 
     def __init__(self, id=None):
