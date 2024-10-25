@@ -1,13 +1,18 @@
 #!/usr/bin/python3
 
-""" Implementing Base class"""
+""" Implementing Base class."""
 
 class Base:
-""" private class atribute """
+
+    """ Private class atribute. """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """
+            Class constructor function.
+        """
+
         if id is not None:
             self.id = id
         else:
