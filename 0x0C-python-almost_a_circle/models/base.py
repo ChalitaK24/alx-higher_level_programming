@@ -2,6 +2,7 @@
 
 """ Implementing Base class."""
 
+
 class Base:
 
     """ Private class atribute. """
