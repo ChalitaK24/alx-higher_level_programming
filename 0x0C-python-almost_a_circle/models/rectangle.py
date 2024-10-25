@@ -22,12 +22,14 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    @property
     def width(self):
         """
         Width getter
         """
         return self.__width
 
+    @width.setter
     def width(self, value):
         """
         Width setter
@@ -37,12 +39,14 @@ class Rectangle(Base):
             raise ValueError("width must be a positive int")
         self.__width = value
 
+    @property
     def height(self):
         """
         height getter
         """
         return self.__height
 
+    @height.setter
     def height(self, value):
         """
         height setter
@@ -52,12 +56,14 @@ class Rectangle(Base):
             raise ValueError("height must be Posisitve int")
         self.__height = value
 
+    @property
     def x(self):
         """
         x getter
         """
         return self.__x
 
+    @x.setter
     def x(self, value):
         """
         x setter
@@ -66,16 +72,18 @@ class Rectangle(Base):
             raise ValueError("x must be non-negative int")
         self.__x = value
 
+    @property
     def y(self):
         """
         y getter
         """
         return self.__y
 
+    @y.setter
     def y(self, value):
         """
         y setter
         """
         if type(value) is not int or value < 0:
-            raise ValueErrorr("y must be a non-negative int")
+            raise ValueError("y must be a non-negative int")
         self.__y = value
