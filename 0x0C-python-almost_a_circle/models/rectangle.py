@@ -4,11 +4,17 @@
 
 from models.base import Base
 
-""" class Rectangle"""
+""" Class Rectangle"""
 
-    def __init_(slef, width, height, x=0, y=0, id=None):
+
+class Rectangle(Base):
+    """
+    Implementation of Class Rectangle
+    """
+
+    def __init__(self, width, height, x=0, y=0, id=None):
         """
-        Function calls Class constructor
+        Class constructor
         """
         super().__init__(id)
         self.width = width
@@ -30,7 +36,6 @@ from models.base import Base
         if type(value) is not int or value <= 0:
             raise ValueError("width must be a positive int")
         self.__width = value
-
 
     def height(self):
         """
@@ -61,15 +66,13 @@ from models.base import Base
             raise ValueError("x must be non-negative int")
         self.__x = value
 
-
     def y(self):
         """
         y getter
         """
         return self.__y
 
-
-    def y(self, value): 
+    def y(self, value):
         """
         y setter
         """
