@@ -35,8 +35,10 @@ class Rectangle(Base):
         Width setter
         """
 
-        if type(value) is not int or value <= 0:
-            raise ValueError("width must be a positive int")
+        if not isinstance(value, int):
+            raise TypeError("width must be an int")
+        if value <= 0:
+            raise ValueError("width must be positive")
         self.__width = value
 
     @property
@@ -52,8 +54,10 @@ class Rectangle(Base):
         height setter
         """
 
-        if type(value) is not int or value <= 0:
-            raise ValueError("height must be Posisitve int")
+        if not isinstance(value, int):
+            raise TypeError("height must be int")
+        if value <= 0:
+            raise ValueError("height must be Posisitve")
         self.__height = value
 
     @property
@@ -68,8 +72,10 @@ class Rectangle(Base):
         """
         x setter
         """
-        if type(value) is not int or value < 0:
-            raise ValueError("x must be non-negative int")
+        if not isinstance(value, int):
+            raise TypeError("x must be int")
+        if value <= 0:
+            raise ValueError("x must be Posisitve")
         self.__x = value
 
     @property
@@ -84,6 +90,8 @@ class Rectangle(Base):
         """
         y setter
         """
-        if type(value) is not int or value < 0:
-            raise ValueError("y must be a non-negative int")
+        if not isinstance(value, int):
+            raise TypeError("y must be int")
+        if value <= 0:
+            raise ValueError("y must be Posistive")
         self.__y = value
