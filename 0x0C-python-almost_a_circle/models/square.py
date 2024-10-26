@@ -6,6 +6,7 @@ from models.rectangle import Rectangle
 
 """ class Square inherits from rectangle"""
 
+
 class Square(Rectangle):
 
     """ class constructor"""
