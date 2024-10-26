@@ -118,9 +118,10 @@ class Rectangle(Base):
         """
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - " \
             f"{self.width}/{self.height}"
+
     def update(self, *args, **kwargs):
         """
-        Update the rectangle attributes with 
+        Update the rectangle attributes with
         positional or keyword arguments
         """
         if args:
@@ -134,11 +135,10 @@ class Rectangle(Base):
                     setattr(self, attr[i], arg)
         else:
             """
-            *kwargs to set attributes by name 
+            *kwargs to set attributes by name
             if no *args is provided
             """
 
             for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
-
