@@ -7,7 +7,7 @@ class TestBase(unittest.TestCase):
     def setUp(self):
         Base._Base__nb_objects = 0
     def test_class_exists(self):
-        self.asserIsNotNone(Base)
+        self.assertIsNotNone(Base)
     def test_create_instance_without_id(self):
         b = Base()
         self.assertIsInstance(b, Base)
