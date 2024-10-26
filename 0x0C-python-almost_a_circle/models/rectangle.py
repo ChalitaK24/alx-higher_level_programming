@@ -123,22 +123,22 @@ class Rectangle(Base):
         Update the rectangle attributes with 
         positional or keyword arguments
         """
-    if args:
-        """
-        *args for setting attributes in order
-        """
-        attr = ["id", "width", "height", "x", "y"]
+        if args:
+            """
+            *args for setting attributes in order
+             """
+            attr = ["id", "width", "height", "x", "y"]
 
-        for i, arg in enumerate(args):
-            if i < len(attr):
-                setattr(self, attr[i], arg)
-    else:
-        """
-        *kwargs to set attributes by name 
-        if no *args is provided
-        """
+            for i, arg in enumerate(args):
+                if i < len(attr):
+                    setattr(self, attr[i], arg)
+        else:
+            """
+            *kwargs to set attributes by name 
+            if no *args is provided
+            """
 
-        for key, value in kwargs.items():
-            if hasattr(self, key):
-                setattr(self, key, value)
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
 
