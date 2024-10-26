@@ -106,8 +106,11 @@ class Rectangle(Base):
         """
         use # to print rectangle
         """
+        for col in range(self.y):
+            print("")
+
         for row in range(self.height):
-            print('#' * self.width)
+            print(" " * self.x + "#" *  self.width)
 
     def __str__(self):
         """
