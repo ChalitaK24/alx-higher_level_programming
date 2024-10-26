@@ -74,7 +74,7 @@ class Rectangle(Base):
         """
         if not isinstance(value, int):
             raise TypeError("x must be int")
-        if value <= 0:
+        if value < 0:
             raise ValueError("x must be Posisitve")
         self.__x = value
 
@@ -92,6 +92,6 @@ class Rectangle(Base):
         """
         if not isinstance(value, int):
             raise TypeError("y must be int")
-        if value <= 0:
+        if value < 0:
             raise ValueError("y must be Posistive")
         self.__y = value
