@@ -30,3 +30,23 @@ class Square(Rectangle):
         """
         self.width = value
         self.height = value
+ 
+    def update(self, *args, **kwargs):
+        """
+        Assigns arg to id, size, x and y attributes
+
+        If *args is provided, assign value
+        1st to 4th argument:  id, size, x, y,
+        If **kwargs is provided and *args is empty, assign based on key words
+        """
+
+        if args:
+            attributes = ['id', 'size', 'x', 'y']
+            for i, value in enumerate(args):
+                if i < len(attributes):
+                    setattr(self, attributes[i], value)
+
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
