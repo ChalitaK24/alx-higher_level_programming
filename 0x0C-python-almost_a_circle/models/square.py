@@ -62,5 +62,8 @@ class Square(Rectangle):
         return the dictionary representation of rectangle inst
         """
         'id' self.id,
-        'width': self.width'
+        'width': self.width
+        'height': self.height,
+        'x': self.x,
+        'y': self.y
 
