@@ -66,15 +66,15 @@ class Base:
         """
         Create an instance with all attributes already set
         """
+        dummy = None
+
         if cls.__name__ == "Rectangle":
 
-            setatr = Rectangle(1, 1)
+            dummy = cls(1, 1)
 
         elif cls.__name__ == "Square":
-            setatr = Square(1)
+            dummy = cls(1)
 
-        else:
-            raise ValueError("Unknown class for create method")
-        setatr.update(**dictionary)
+        dummy.update(**dictionary)
 
-        return setatr
+        return dummy
