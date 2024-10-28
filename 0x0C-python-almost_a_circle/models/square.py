@@ -15,6 +15,12 @@ class Square(Rectangle):
         new Square instance.
         """
         super().__init__(size, size, x, y, id)
+    
+    def __str__(self):
+        """
+        returns str representation of the Square
+        """
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
     @property
     def size(self):
@@ -50,3 +56,11 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        return the dictionary representation of rectangle inst
+        """
+        'id' self.id,
+        'width': self.width'
+
