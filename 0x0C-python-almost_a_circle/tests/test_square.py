@@ -116,3 +116,21 @@ class TestSquareUpdateMethod(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
+"""13th question"""
+
+class TestRectangle(unittest.TestCase):
+
+    def test_to_dictionary(self):
+        """Test the dictionary representation of Rectangle."""
+        rec = Rectangle(4, 6, 2, 1, 101)
+        expected_dict = {
+            'id': 101,
+            'width': 4,
+            'height': 6,
+            'x': 2,
+            'y': 1
+        }
+        self.assertEqual(rec.to_dictionary(), expected_dict)
+
+if __name__ == '__main__':
+    unittest.main()
