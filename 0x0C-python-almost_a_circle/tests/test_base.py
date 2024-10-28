@@ -31,19 +31,19 @@ class TestBase(unittest.TestCase):
 """quetion 15"""
 
     def test_to_json_string_with_none(self):
-        """Test JSON string conversion when input is None"""        self.assertEqual(Base.to_json_string(None), "[]")
+        """Test JSON string conversion when input is None"""
+            self.assertEqual(Base.to_json_string(None), "[]")
 
     def test_to_json_string_with_empty_list(self):
-         """Test JSON string conversion when input is an empty list"""
-         self.assertEqual(Base.to_json_string([]), "[]")
+        """Test JSON string conversion when input is an empty list"""
+        self.assertEqual(Base.to_json_string([]), "[]")
 
      def test_to_json_string_with_list_of_dicts(self):
-         """Test JSON string conversion with valid dictionaries"""
-
-          list_dicts = [{"id": 1, "width": 10, "height": 5}]
-          json_str = Base.to_json_string(list_dicts)
-          expected_str = '[{"id": 1}, {"id": 2, "width": 4}]'
-          self.assertEqual(json_str, expected_str)
+        """Test JSON string conversion with valid dictionaries"""
+        list_dicts = [{"id": 1, "width": 10, "height": 5}]
+        json_str = Base.to_json_string(list_dicts)
+        expected_str = '[{"id": 1}, {"id": 2, "width": 4}]'
+        self.assertEqual(json_str, expected_str)
 
 """ 16"""
 
@@ -61,6 +61,31 @@ class TestBase(unittest.TestCase):
         self.assertEqual(content, expected_content)
 
         os.remove('Rectangle.json')
+
+""" qn 17"""
+
+class TestBase(unittest.TestCase):
+    def test_create_rectangle(self):
+        """Test creating a Rectangle instance using the create method"""
+        rect_data = {"id": 89, "width": 4, "height": 6, "x": 2, "y": 3}
+        rectangle = Rectangle.create(**rect_data)
+
+        self.assertEqual(rectangle.id, 89)
+        self.assertEqual(rectangle.width, 4)
+        self.assertEqual(rectangle.height, 6)
+        self.assertEqual(rectangle.x, 2)
+        self.assertEqual(rectangle.y, 3)
+
+    def test_create_square(self):
+        """Test creating a Square instance using the create method"""
+        square_data = {"id": 42, "size": 5, "x": 1, "y": 1}
+        square = Square.create(**square_data)
+
+        self.assertEqual(square.id, 42)
+        self.assertEqual(square.size, 5)
+        self.assertEqual(square.x, 1)
+        self.assertEqual(square.y, 1)
+
 
 if __name__ == "__main__":
     unittest.main()
