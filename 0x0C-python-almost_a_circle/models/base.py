@@ -80,7 +80,6 @@ class Base:
 
         return dummy
 
-
     @classmethod
     def load_from_file(cls):
         """Load list of instances from JSON file"""
