@@ -49,4 +49,13 @@ class Base:
 
         with open(filename, 'w') as file:
 
-             file.write(json_string)
+             file.write(json_stringi)
+
+
+    def from_json_string(json_string):
+        """Returns the list represented by json_str"""
+        if json_string is None or json_string == "":
+
+            return []
+
+        return json.loads(json_sting)
