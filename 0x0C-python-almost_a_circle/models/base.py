@@ -48,7 +48,7 @@ class Base:
 
         with open(filename, 'w') as file:
 
-            file.write(json_stringi)
+            file.write(json_string)
 
     def from_json_string(json_string):
         """
