@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 
 import unittest
-
+import os
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
+
 
 class TestBase(unittest.TestCase):
 
@@ -42,6 +45,22 @@ class TestBase(unittest.TestCase):
           expected_str = '[{"id": 1}, {"id": 2, "width": 4}]'
           self.assertEqual(json_str, expected_str)
 
+""" 16"""
+
+     def test_save_to_file(self):
+        """Test saving Rectangle instances to a file"""
+        rectangle = Rectangle(10, 5, 0, 0)
+        rectangle2 = Rectangle(7, 3, 1, 1)
+        
+        Base.save_to_file([rectangle, rectangle2])
+        
+        with open('Rectangle.json', 'r') as file:
+            content = file.read()
+        
+        expected_content = '[{"id": 1, "width": 10, "height": 5, "x": 0, "y": 0}, {"id": 2, "width": 7, "height": 3, "x": 1, "y": 1}]'
+        self.assertEqual(content, expected_content)
+
+        os.remove('Rectangle.json')
 
 if __name__ == "__main__":
     unittest.main()
