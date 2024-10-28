@@ -53,9 +53,30 @@ class Base:
 
 
     def from_json_string(json_string):
-        """Returns the list represented by json_str"""
+        """
+        Returns the list represented by json_str
+        """
+        
         if json_string is None or json_string == "":
 
             return []
 
         return json.loads(json_sting)
+
+    def create(cls, **dictionary):
+        """
+        Create an instance with all attributes already set
+        """
+        if cls.__name__ == "Rectangle":
+
+            setatr = Rectangle(1, 1)
+
+        elif cls.__mane__ == "Square":
+            setatr = square(1)
+
+        else:
+            raise ValueError("Unknown class for create method")
+        setatr.update(**dictionary)
+
+        return setatr
+        
