@@ -61,8 +61,9 @@ class Base:
 
             return []
 
-        return json.loads(json_sting)
+        return json.loads(json_string)
 
+    @classmethod
     def create(cls, **dictionary):
         """
         Create an instance with all attributes already set
@@ -71,12 +72,13 @@ class Base:
 
             setatr = Rectangle(1, 1)
 
-        elif cls.__mane__ == "Square":
-            setatr = square(1)
+        elif cls.__name__ == "Square":
+            setatr = Square(1)
 
         else:
             raise ValueError("Unknown class for create method")
         setatr.update(**dictionary)
 
         return setatr
-        
+
+
