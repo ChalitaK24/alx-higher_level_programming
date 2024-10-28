@@ -132,5 +132,19 @@ class TestRectangle(unittest.TestCase):
         }
         self.assertEqual(rec.to_dictionary(), expected_dict)
 
+"""14 question"""
+
+class TestSquare(unittest.TestCase):
+
+    def test_square_to_dictionary(self):
+        square = Square(5, 2, 3, 10)
+        expected_dict = {
+            'id': 10,
+            'size': 5,
+            'x': 2,
+            'y': 3
+        }
+        self.assertEqual(square.to_dictionary(), expected_dict)
+
 if __name__ == '__main__':
     unittest.main()
