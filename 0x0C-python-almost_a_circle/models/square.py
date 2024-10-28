@@ -15,7 +15,7 @@ class Square(Rectangle):
         new Square instance.
         """
         super().__init__(size, size, x, y, id)
-    
+
     def __str__(self):
         """
         returns str representation of the Square
@@ -36,7 +36,7 @@ class Square(Rectangle):
         """
         self.width = value
         self.height = value
- 
+
     def update(self, *args, **kwargs):
         """
         Assigns arg to id, size, x and y attributes
@@ -66,4 +66,4 @@ class Square(Rectangle):
             'size': self.width,
             'x': self.x,
             'y': self.y
-        } 
+        }
