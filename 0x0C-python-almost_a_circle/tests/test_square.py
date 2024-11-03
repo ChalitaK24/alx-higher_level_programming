@@ -8,25 +8,27 @@ from io import StringIO
 
 class TestSquare(unittest.TestCase):
 
+"""qn 10"""
+
     def test_class_exists_and_inherits_from_rectangle(self):
-        """Test that Square class exists and inherits from Rectangle."""
+
         self.assertTrue(issubclass(Square, Rectangle))
 
     def test_create_square_with_only_size(self):
-        """Test creation of Square with only size (width and height should match size)."""
+
         square = Square(5)
         self.assertEqual(square.width, 5)
         self.assertEqual(square.height, 5)
 
     def test_create_square_with_size_and_x(self):
-        """Test creation of Square with size and x (x should be validated)."""
+
         square = Square(5, 7)
         self.assertEqual(square.width, 5)
         self.assertEqual(square.height, 5)
         self.assertEqual(square.x, 7)
 
     def test_create_square_with_size_x_and_y(self):
-        """Test creation of Square with size, x, and y (y should be validated)."""
+
         square = Square(5, 7, 2)
         self.assertEqual(square.width, 5)
         self.assertEqual(square.height, 5)
@@ -34,7 +36,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(square.y, 2)
 
     def test_create_square_with_size_x_y_and_id(self):
-        """Test creation of Square with size, x, y, and id."""
+
         square = Square(5, 7, 2, 89)
         self.assertEqual(square.width, 5)
         self.assertEqual(square.height, 5)
@@ -43,25 +45,27 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(square.id, 89)
 
     def test_str_method_is_overloaded(self):
-        """Test that the __str__ method is overloaded in Square."""
+
         square = Square(5, 7, 2, 89)
         self.assertEqual(str(square), "[Square] (89) 7/2 - 5")
 
     def test_area_method_exists(self):
-        """Test that the area method is available in Square (inherited from Rectangle)."""
+
         square = Square(5)
         self.assertEqual(square.area(), 25)
 
     def test_display_method_exists(self):
-        """Test that the display method is available in Square (inherited from Rectangle)."""
+
         square = Square(3)
         with patch("sys.stdout", new=StringIO()) as mock_stdout:
             square.display()
             output = mock_stdout.getvalue()
         self.assertIn("#", output)
 
+""" question    """
+
     def test_str_method_is_overloaded(self):
-        """Test that the __str__ method is overloaded in Square."""
+
         square = Square(5, 7, 2, 89)
         self.assertEqual(str(square), "[Square] (89) 7/2 - 5")
 
