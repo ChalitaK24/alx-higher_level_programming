@@ -12,3 +12,9 @@ class MyList(list):
         Function prints the sorted list in ascending order
         """
         print(sorted(self))
+
+    def __repr__(self):
+        """
+        Returns MyList instance in the format MyList([...])
+        """
+        return f"MyList({super().__repr__()})"
