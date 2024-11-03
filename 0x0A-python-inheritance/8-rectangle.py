@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-
 """
 Rectangle class that inherits from BaseGeometry
 """
+
+
 class BaseGeometry:
     """
     A class with geometry utilities
     """
-    
+
     def area(self):
         """
 
@@ -22,6 +23,7 @@ class BaseGeometry:
             raise TypeError(f"{name} must be in an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
+
 
 class Rectangle(BaseGeometry):
     """
