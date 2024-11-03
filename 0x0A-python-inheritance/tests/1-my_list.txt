@@ -1,8 +1,7 @@
->>> import importlib.util
->>> spec = importlib.util.spec_from_file_location("my_list", "1-my_list.py")
->>> my_module = importlib.util.module_from_spec(spec)
->>> spec.loader.exec_module(my_module)
->>> MyList = my_module.MyList
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> type(my_list)
+<class '1-my_list.MyList'>
 
 >>> my_list = MyList([3,1,2,5,4])
 >>> my_list.print_sorted()
