@@ -8,7 +8,6 @@ Traceback (most recent call last):
 ...
 TypeError: Age must be an integer
 >>> bg.integer_validator("Age", -5)
-
 Traceback (most recent call last):
 ...
 ValueError: Age must be greater than 0
