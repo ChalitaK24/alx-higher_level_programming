@@ -27,7 +27,7 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """
-
+    Defines a rectangle using BaseGeometry
     """
     def __init__(self, width, height):
         """
