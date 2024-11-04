@@ -1,4 +1,7 @@
->>> from my_module import add_integer
+>>> import importlib
+>>> add_integer_module = importlib.import_module("0-add_integer")
+>>> add_integer = add_integer_module.add_integer
+
 
 >>> add_integer(2, 3)
 5
@@ -19,3 +22,9 @@
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
+
+>>> add_integer(3, "two")  #doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
