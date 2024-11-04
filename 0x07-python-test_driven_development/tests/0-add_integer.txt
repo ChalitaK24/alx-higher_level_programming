@@ -1,0 +1,21 @@
+>>> from my_module import add_integer
+
+>>> add_integer(2, 3)
+5
+
+>>> add_integer(100)
+198
+
+>>> add_integer(3.6, 2)
+5
+
+>>> add_integer(123456789, 987654321)
+1111111110
+
+>>> add_integer(-5, -6)
+-11
+
+>>> add_integer("3", 2)  #doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
