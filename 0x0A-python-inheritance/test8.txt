@@ -1,0 +1,48 @@
+>>> import importlib.util
+
+# Dynamically load '7-base_geometry.py'
+>>> spec_bg = importlib.util.spec_from_file_location("BaseGeometry", "./7-base_geometry.py")
+>>> bg_module = importlib.util.module_from_spec(spec_bg)
+>>> spec_bg.loader.exec_module(bg_module)
+>>> BaseGeometry = bg_module.BaseGeometry
+
+# Dynamically load '8-rectangle.py'
+>>> spec_rect = importlib.util.spec_from_file_location("Rectangle", "./8-rectangle.py")
+>>> rect_module = importlib.util.module_from_spec(spec_rect)
+>>> spec_rect.loader.exec_module(rect_module)
+>>> Rectangle = rect_module.Rectangle
+
+# Testing cases
+>>> print(dir(Rectangle))
+[... 'BaseGeometry', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'integer_validator']
+
+
+>>> print(issubclass(Rectangle, BaseGeometry))
+True
+
+>>> r = Rectangle(1, 4)
+>>> print(type(r))
+<class '8-rectangle.Rectangle'>
+
+>>> r = Rectangle(0, 4)
+Traceback (most recent call last):
+    ...
+ValueError: width must be greater than 0
+
+>>> r = Rectangle(3, "3")
+Traceback (most recent call last):
+    ...
+TypeError: height must be an integer
+
+>>> r = Rectangle(3, 5)
+>>> print(r._Rectangle__width)
+3
+
+>>> print(r._Rectangle__height)
+5
+
+>>> r = Rectangle()
+Traceback (most recent call last):
+    ...
+TypeError: __init__() missing 2 required positional arguments: 'width' and 'height'
+
