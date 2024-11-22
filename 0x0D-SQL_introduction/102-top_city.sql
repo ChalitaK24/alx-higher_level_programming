@@ -2,6 +2,7 @@
 -- ordered by temperature in descending order
 SELECT city, value AS temperature 
 FROM temperatures 
-WHERE month IN (7, 8) 
-ORDER BY value DESC 
+WHERE month = 7 OR month = 8
+GROUP BY city
+ORDER BY temperature DESC
 LIMIT 3;
