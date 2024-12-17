@@ -9,9 +9,9 @@ const fstArg = parseInt(args[0]);
 
 if (!isNaN(fstArg))
 {
-	console.log(`My nnumber: ${fstArg}`);
+	console.log(`My number: ${fstArg}`);
 }
 else
 {
 	console.log("Not a number");
-
+}
